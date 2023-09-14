@@ -20,6 +20,11 @@ ___
     * Basic command line Calculator
     * Calculator with GUI
     * Mobile version
+* Movie List 
+    * Want to watch / watched
+    * Ranking system
+    * Getting ratings from IMDb and Rotten Tomatoes
+    * GUI / website
 * TODO List
     * Basic TODO List
     * TODO List with a saving to file functionality
