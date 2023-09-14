@@ -37,7 +37,21 @@ public class Main {
 
                 }
                 case 2 -> {
+                    ArrayList<String> timeUnits = new ArrayList<>(List.of("Millisecond","Second", "Minute", "Hour","Day","Week","Go back"));
                     System.out.println("----    Time    ----");
+                    for(int i = 0; i < timeUnits.size(); i++){
+                        System.out.println((i + 1) + ". " + timeUnits.get(i));
+                    }
+                    int baseMagnitude = magnitude(timeUnits.size(),true);
+                    if(baseMagnitude == timeUnits.size()) break;
+                    int endMagnitude = magnitude(timeUnits.size(),false);
+                    if(endMagnitude == timeUnits.size()) break;
+                    System.out.println("Converting #" + timeUnits.get(baseMagnitude -1) + " ---> #" + timeUnits.get(endMagnitude -1));
+
+                    System.out.println("Pass the amount of " + timeUnits.get(baseMagnitude -1 ) + "s:");
+                    double amount = pickUnit();
+                    System.out.println(amount + " " + timeUnits.get(baseMagnitude -1 ) + "s ---> " + timeConversion(baseMagnitude,endMagnitude,amount) + " " + timeUnits.get(endMagnitude -1) + "s");
+
                 }
                 case 3 -> {
                     System.out.println("----   Temperature    ----");
@@ -97,7 +111,7 @@ public class Main {
         }
         return 0;
     }
-    public static double timeConversion( int baseMagnitude, int endMagnitude){
+    public static double timeConversion( int baseMagnitude, int endMagnitude, double amount){
 
         switch (baseMagnitude){
 
