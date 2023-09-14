@@ -1,17 +1,55 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Opt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Welcome to unit converter app!");
+        System.out.println("------------------------------");
+        boolean app_on = true;
+        while (app_on) {
+            System.out.println("Pick a category:");
+            System.out.println("""
+                    1. Length
+                    2. Time
+                    3. Temperature
+                    4. Mass
+                    5. Exit""");
+            int unitPicked = pickUnit();
+            
+            switch (unitPicked) {
+                case 1 -> {
+                    System.out.println("1");
+                }
+                case 2 -> {
+                    System.out.println("2");
+                }
+                case 3 -> {
+                    System.out.println("3");
+                }
+                case 4 -> {
+                    System.out.println("4");
+                }
+                case 5 -> {
+                    System.out.println("5");
+                    app_on = false;
+                }
+                default -> {
+                    System.out.println("Invalid number!");
+                }
+            }
+        }
+        scanner.close();
+    }
 
-        // Press Ctrl+R or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
-
-            // Press Ctrl+D to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Cmd+F8.
-            System.out.println("i = " + i);
+    public static int pickUnit(){
+        System.out.println("Pass a number:");
+        while (true) {
+            try {
+                Scanner scanner = new Scanner(System.in);
+                return Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Pass a number!");
+            }
         }
     }
 }
