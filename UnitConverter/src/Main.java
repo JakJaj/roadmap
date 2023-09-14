@@ -25,9 +25,9 @@ public class Main {
                     for(int i = 0; i < lengthUnits.size(); i++){
                         System.out.println((i + 1) + ". " + lengthUnits.get(i));
                     }
-                    int baseMagnitude = magnitude(5,true);
+                    int baseMagnitude = magnitude(lengthUnits.size(), true);
                     if(baseMagnitude == lengthUnits.size()) break;
-                    int endMagnitude = magnitude(5,false);
+                    int endMagnitude = magnitude(lengthUnits.size(),false);
                     if(endMagnitude == lengthUnits.size()) break;
                     System.out.println("Converting #" + lengthUnits.get(baseMagnitude -1) + " ---> #" + lengthUnits.get(endMagnitude -1));
 
