@@ -218,13 +218,40 @@ public class Main {
     public static double massConversion(int baseMagnitude, int endMagnitude, double amount) {
 
         switch (baseMagnitude) {
-            case 1 -> {
+            case 1 -> {//mg
+                if(endMagnitude == 1) return amount;
+                if(endMagnitude == 2) return amount / 1000;
+                if(endMagnitude == 3) return amount / 453600;
+                if(endMagnitude == 4) return amount / 1000000;
+                if(endMagnitude == 5) return amount / 1000000000;
             }
-            case 2 -> {
+            case 2 -> {//g
+                if(endMagnitude == 1) return amount * 1000;
+                if(endMagnitude == 2) return amount;
+                if(endMagnitude == 3) return amount / 453.6;
+                if(endMagnitude == 4) return amount / 1000;
+                if(endMagnitude == 5) return amount / 1000000;
             }
-            case 3 -> {
+            case 3 -> {//lb
+                if(endMagnitude == 1) return amount * 453600;
+                if(endMagnitude == 2) return amount * 453.6;
+                if(endMagnitude == 3) return amount;
+                if(endMagnitude == 4) return amount / 2.205;
+                if(endMagnitude == 5) return amount / 2205;
             }
-            case 4 -> {
+            case 4 -> {//kg
+                if(endMagnitude == 1) return amount * 1000000;
+                if(endMagnitude == 2) return amount * 1000;
+                if(endMagnitude == 3) return amount * 2.205;
+                if(endMagnitude == 4) return amount;
+                if(endMagnitude == 5) return amount / 1000;
+            }
+            case 5 -> {//t
+                if(endMagnitude == 1) return amount * 1000000000;
+                if(endMagnitude == 2) return amount * 1000000;
+                if(endMagnitude == 3) return amount * 2205;
+                if(endMagnitude == 4) return amount * 1000;
+                if(endMagnitude == 5) return amount;
             }
         }
         return 0;
