@@ -179,14 +179,20 @@ public class Main {
     public static double temperatureConversion( int baseMagnitude, int endMagnitude,double amount){
 
         switch (baseMagnitude){
-
-            case 1 ->{
+            case 1 ->{//C
+                if(endMagnitude == 1) return amount;
+                if(endMagnitude == 2) return amount + 273.15;
+                if(endMagnitude == 3) return (amount * 9 / 5) + 32;
             }
-            case 2 -> {
+            case 2 -> {//K
+                if(endMagnitude == 1) return amount - 273.15;
+                if(endMagnitude == 2) return amount;
+                if(endMagnitude == 3) return (amount - 273.15) * 9 / 5 + 32;
             }
-            case 3 -> {
-            }
-            case 4 -> {
+            case 3 -> {//F
+                if(endMagnitude == 1) return (amount - 32) * 5 / 9;
+                if(endMagnitude == 2) return (amount - 32) * 5 / 9 + 273.15;
+                if(endMagnitude == 3) return amount;
             }
         }
         return 0;
