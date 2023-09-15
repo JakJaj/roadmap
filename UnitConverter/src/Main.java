@@ -77,7 +77,7 @@ public class Main {
                     if (baseMagnitude == massUnits.size()) break;
                     int endMagnitude = magnitude(massUnits.size(), false);
                     if (endMagnitude == massUnits.size()) break;
-                    System.out.println("Converting #" + massUnits.get(baseMagnitude - 1) + " ---> #" + massUnits.get(endMagnitude - 1));
+                    System.out.println("Converting " + massUnits.get(baseMagnitude - 1) + " ---> " + massUnits.get(endMagnitude - 1));
 
                     System.out.println("Pass the amount of " + massUnits.get(baseMagnitude - 1) + "s:");
                     double amount = pickUnit();
