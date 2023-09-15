@@ -34,7 +34,6 @@ public class Main {
                     System.out.println("Pass the amount of " + lengthUnits.get(baseMagnitude -1 ) + "s:");
                     double amount = pickUnit();
                     System.out.println(amount + " " + lengthUnits.get(baseMagnitude -1 ) + "s ---> " + lengthConversion(baseMagnitude,endMagnitude,amount) + " " + lengthUnits.get(endMagnitude -1) + "s");
-
                 }
                 case 2 -> {
                     ArrayList<String> timeUnits = new ArrayList<>(List.of("Millisecond","Second", "Minute", "Hour","Day","Week","Go back"));
@@ -51,10 +50,22 @@ public class Main {
                     System.out.println("Pass the amount of " + timeUnits.get(baseMagnitude -1 ) + "s:");
                     double amount = pickUnit();
                     System.out.println(amount + " " + timeUnits.get(baseMagnitude -1 ) + "s ---> " + timeConversion(baseMagnitude,endMagnitude,amount) + " " + timeUnits.get(endMagnitude -1) + "s");
-
                 }
                 case 3 -> {
                     System.out.println("----   Temperature    ----");
+                    ArrayList<String> temperatureUnits = new ArrayList<>(List.of("Celsius","Kelvin", "Fahrenheit","Go back"));
+                    for(int i = 0; i < temperatureUnits.size(); i++){
+                        System.out.println((i + 1) + ". " + temperatureUnits.get(i));
+                    }
+                    int baseMagnitude = magnitude(temperatureUnits.size(),true);
+                    if(baseMagnitude == temperatureUnits.size()) break;
+                    int endMagnitude = magnitude(temperatureUnits.size(),false);
+                    if(endMagnitude == temperatureUnits.size()) break;
+                    System.out.println("Converting #" + temperatureUnits.get(baseMagnitude -1) + " ---> #" + temperatureUnits.get(endMagnitude -1));
+
+                    System.out.println("Pass the amount of " + temperatureUnits.get(baseMagnitude -1 ) + "s:");
+                    double amount = pickUnit();
+                    System.out.println(amount + " " + temperatureUnits.get(baseMagnitude -1 ) + "s ---> " + temperatureConversion(baseMagnitude,endMagnitude,amount) + " " + temperatureUnits.get(endMagnitude -1) + "s");
                 }
                 case 4 -> {
                     System.out.println("----   Mass    ----");
@@ -165,18 +176,16 @@ public class Main {
         }
         return 0;
     }
-    public static double temperatureConversion( int baseMagnitude, int endMagnitude){
+    public static double temperatureConversion( int baseMagnitude, int endMagnitude,double amount){
 
         switch (baseMagnitude){
 
             case 1 ->{
             }
             case 2 -> {
-
             }
             case 3 -> {
             }
-
             case 4 -> {
             }
         }
