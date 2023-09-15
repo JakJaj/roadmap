@@ -29,7 +29,7 @@ public class Main {
                     if(baseMagnitude == lengthUnits.size()) break;
                     int endMagnitude = magnitude(lengthUnits.size(),false);
                     if(endMagnitude == lengthUnits.size()) break;
-                    System.out.println("Converting #" + lengthUnits.get(baseMagnitude -1) + " ---> #" + lengthUnits.get(endMagnitude -1));
+                    System.out.println("Converting " + lengthUnits.get(baseMagnitude -1) + " ---> " + lengthUnits.get(endMagnitude -1));
 
                     System.out.println("Pass the amount of " + lengthUnits.get(baseMagnitude -1 ) + "s:");
                     double amount = pickUnit();
@@ -45,7 +45,7 @@ public class Main {
                     if(baseMagnitude == timeUnits.size()) break;
                     int endMagnitude = magnitude(timeUnits.size(),false);
                     if(endMagnitude == timeUnits.size()) break;
-                    System.out.println("Converting #" + timeUnits.get(baseMagnitude -1) + " ---> #" + timeUnits.get(endMagnitude -1));
+                    System.out.println("Converting " + timeUnits.get(baseMagnitude -1) + " ---> " + timeUnits.get(endMagnitude -1));
 
                     System.out.println("Pass the amount of " + timeUnits.get(baseMagnitude -1 ) + "s:");
                     double amount = pickUnit();
@@ -61,7 +61,7 @@ public class Main {
                     if(baseMagnitude == temperatureUnits.size()) break;
                     int endMagnitude = magnitude(temperatureUnits.size(),false);
                     if(endMagnitude == temperatureUnits.size()) break;
-                    System.out.println("Converting #" + temperatureUnits.get(baseMagnitude -1) + " ---> #" + temperatureUnits.get(endMagnitude -1));
+                    System.out.println("Converting " + temperatureUnits.get(baseMagnitude -1) + " ---> " + temperatureUnits.get(endMagnitude -1));
 
                     System.out.println("Pass the amount of " + temperatureUnits.get(baseMagnitude -1 ) + "s:");
                     double amount = pickUnit();
@@ -74,14 +74,17 @@ public class Main {
                     System.out.println("5");
                     app_on = false;
                 }
-                default -> {
-                    System.out.println("Invalid number!");
-                }
+                default -> System.out.println("Invalid number!");
+
             }
         }
         scanner.close();
+        System.out.println("""
+                ------------------------------------------
+                -- Thanks for using this unit converter --
+                -------------------------------------------""");
+        System.out.println("Have a nice day!");
     }
-
     public static int pickUnit(){
         System.out.println("Pass a number:");
         while (true) {
