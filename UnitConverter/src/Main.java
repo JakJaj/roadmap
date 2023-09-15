@@ -37,7 +37,21 @@ public class Main {
 
                 }
                 case 2 -> {
+                    ArrayList<String> timeUnits = new ArrayList<>(List.of("Millisecond","Second", "Minute", "Hour","Day","Week","Go back"));
                     System.out.println("----    Time    ----");
+                    for(int i = 0; i < timeUnits.size(); i++){
+                        System.out.println((i + 1) + ". " + timeUnits.get(i));
+                    }
+                    int baseMagnitude = magnitude(timeUnits.size(),true);
+                    if(baseMagnitude == timeUnits.size()) break;
+                    int endMagnitude = magnitude(timeUnits.size(),false);
+                    if(endMagnitude == timeUnits.size()) break;
+                    System.out.println("Converting #" + timeUnits.get(baseMagnitude -1) + " ---> #" + timeUnits.get(endMagnitude -1));
+
+                    System.out.println("Pass the amount of " + timeUnits.get(baseMagnitude -1 ) + "s:");
+                    double amount = pickUnit();
+                    System.out.println(amount + " " + timeUnits.get(baseMagnitude -1 ) + "s ---> " + timeConversion(baseMagnitude,endMagnitude,amount) + " " + timeUnits.get(endMagnitude -1) + "s");
+
                 }
                 case 3 -> {
                     System.out.println("----   Temperature    ----");
@@ -97,19 +111,56 @@ public class Main {
         }
         return 0;
     }
-    public static double timeConversion( int baseMagnitude, int endMagnitude){
+    public static double timeConversion( int baseMagnitude, int endMagnitude, double amount){
 
         switch (baseMagnitude){
-
-            case 1 ->{
+            case 1 -> {//ms
+                if(endMagnitude == 1) return amount;
+                if(endMagnitude == 2) return amount / 1000;
+                if(endMagnitude == 3) return amount / 60000;
+                if(endMagnitude == 4) return amount / 3600000;
+                if(endMagnitude == 5) return amount / 86400000;
+                if(endMagnitude == 6) return amount / 604800000;
             }
-            case 2 -> {
-
+            case 2 -> {//s
+                if(endMagnitude == 1) return amount * 1000;
+                if(endMagnitude == 2) return amount;
+                if(endMagnitude == 3) return amount / 60;
+                if(endMagnitude == 4) return amount / 3600;
+                if(endMagnitude == 5) return amount / 86400;
+                if(endMagnitude == 6) return amount / 604800;
             }
-            case 3 -> {
+            case 3 -> {//min
+                if(endMagnitude == 1) return amount * 60000;
+                if(endMagnitude == 2) return amount * 60;
+                if(endMagnitude == 3) return amount;
+                if(endMagnitude == 4) return amount * 60;
+                if(endMagnitude == 5) return amount * 1440;
+                if(endMagnitude == 6) return amount * 10080;
             }
-
-            case 4 -> {
+            case 4 -> {//h
+                if(endMagnitude == 1) return amount * 3600000;
+                if(endMagnitude == 2) return amount * 3600;
+                if(endMagnitude == 3) return amount * 60;
+                if(endMagnitude == 4) return amount;
+                if(endMagnitude == 5) return amount / 24;
+                if(endMagnitude == 6) return amount / 168;
+            }
+            case 5 -> {//d
+                if(endMagnitude == 1) return amount * 86400000;
+                if(endMagnitude == 2) return amount * 86400;
+                if(endMagnitude == 3) return amount * 1440;
+                if(endMagnitude == 4) return amount * 24;
+                if(endMagnitude == 5) return amount;
+                if(endMagnitude == 6) return amount / 7;
+            }
+            case 6 -> {//week
+                if(endMagnitude == 1) return amount * 604800000;
+                if(endMagnitude == 2) return amount * 604800;
+                if(endMagnitude == 3) return amount * 10080;
+                if(endMagnitude == 4) return amount * 168;
+                if(endMagnitude == 5) return amount * 7;
+                if(endMagnitude == 6) return amount;
             }
         }
         return 0;
