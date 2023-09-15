@@ -3,14 +3,14 @@ This repo was created in order to make some kind of a basic portfolio.
 
 ### Finished projects
 ___
+* Unit Converter
 
 ### Current project
 ___
-* Unit Converter
+* Password Generator
 
 ### Future projects
 ___
-* Password Generator
 * Quiz / Game show
 * Loading and displaying from a CSV file 
 * Currency Converter
