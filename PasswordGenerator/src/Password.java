@@ -18,7 +18,7 @@ public class Password {
             "Upper case: " + (isUpperCase() ? "\u2713" : "\u2717") + "\n" +
             "Lower case: " + (isLowerCase() ? "\u2713" : "\u2717") + "\n" +
             "Numbers: " + (isNumbers() ? "\u2713" : "\u2717") + "\n" +
-            "Symbols: " + (isSymbols() ? "\u2713" : "\u2717");
+            "Symbols: " + (isSymbols() ? "\u2713" : "\u2717") + "\n";
 
     }
     public String getPassword() {
@@ -50,31 +50,40 @@ public class Password {
     }
 
     public void setUpperCase(boolean upperCase) {
-        this.upperCase = upperCase;
-    }
+        if(!(isSymbols() || isLowerCase() || isNumbers())){
+            System.out.println("Turning off all settings is forbidden");
+        }
+        else this.upperCase = upperCase; }
 
-    private boolean isLowerCase() {
+    boolean isLowerCase() {
         return lowerCase;
     }
-
     public void setLowerCase(boolean lowerCase) {
-        this.lowerCase = lowerCase;
+        if(!(isSymbols() || isUpperCase() || isNumbers())){
+            System.out.println("Turning off all settings is forbidden");
+        }
+        else this.lowerCase = lowerCase;
     }
-
-    private boolean isNumbers() {
+    boolean isNumbers() {
         return numbers;
     }
 
     public void setNumbers(boolean numbers) {
-        this.numbers = numbers;
+        if(!(isSymbols() || isLowerCase() || isUpperCase())){
+            System.out.println("Turning off all settings is forbidden");
+        }
+        else this.numbers = numbers;
     }
 
-    private boolean isSymbols() {
+    boolean isSymbols() {
         return symbols;
     }
 
-    public void setSymbols(boolean symbols) {
-        this.symbols = symbols;
+    void setSymbols(boolean symbols) {
+        if(!(isUpperCase() || isLowerCase() || isNumbers())){
+            System.out.println("Turning off all settings is forbidden");
+        }
+        else this.symbols = symbols;
     }
 
     private int getPasswordLength() {
