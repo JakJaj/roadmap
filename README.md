@@ -4,15 +4,14 @@ This repo was created in order to make some kind of a basic portfolio.
 ### Finished projects
 ___
 * Unit Converter
-
+* Password Generator
 ### Current project
 ___
-* Password Generator
+* Loading and displaying from a CSV file
 
 ### Future projects
 ___
 * Quiz / Game show
-* Loading and displaying from a CSV file 
 * Currency Converter
 * Worldle 
     * Mobile version
