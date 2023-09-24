@@ -14,12 +14,16 @@ ___
 ### Future projects
 ___
 * Quiz / Game show
+* Word count tool
+* Number guessing game
 * Worldle 
     * Mobile version
+* Digital clock
 * Calculator
     * Basic command line Calculator
     * Calculator with GUI
     * Mobile version
+* Tic-Tac-Toe
 * Movie List 
     * Want to watch / watched
     * Ranking system
@@ -32,6 +36,10 @@ ___
     * TODO List with GUI
     * Mobile version
 * Weather Information System
+* Explore the world (Superlocal clone)
+* Survey System
+* Snake game
+
 * Home Budget App
 * Kcal counter 
 
