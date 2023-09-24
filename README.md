@@ -39,9 +39,11 @@ ___
 * Explore the world (Superlocal clone)
 * Survey System
 * Snake game
-
+* Chess
+* Memory game
 * Home Budget App
-* Kcal counter 
+* Kcal counter
+* Instagram clone
 
 
 
