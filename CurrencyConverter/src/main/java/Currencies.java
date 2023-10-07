@@ -11,7 +11,7 @@ public class Currencies {
             final Document document = Jsoup.connect(url).get();
 
             for(Element row : document.select("table.table.table-hover.table-striped.table-heatmap tr")){
-                if(row.select("td:nth-of-type(2)").text().equals("")){
+                if(row.select("td:nth-of-type(2)").text().isEmpty()){
                     continue;
                 }else {
                 final String ticker = row.select("td:nth-of-type(2)").text();
@@ -20,8 +20,7 @@ public class Currencies {
                 }
             }
         }catch (Exception ex){
-            ex.printStackTrace();
+            System.out.println(ex.getMessage());
         }
-
     }
 }
