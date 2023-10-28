@@ -6,16 +6,14 @@ ___
 * Unit Converter
 * Password Generator
 * Loading and displaying from a CSV file
-  
 ### Current project
 ___
 * Currency Converter
-  
+* Number guessing game
 ### Future projects
 ___
 * Quiz / Game show
 * Word count tool
-* Number guessing game
 * Worldle 
     * Mobile version
 * Digital clock
