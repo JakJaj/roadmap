@@ -6,10 +6,10 @@ ___
 * Unit Converter
 * Password Generator
 * Loading and displaying from a CSV file
+* Number guessing game
 ### Current project
 ___
 * Currency Converter
-* Number guessing game
 ### Future projects
 ___
 * Quiz / Game show
